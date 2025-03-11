@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .login-btn {
+            background-color: #28a745;
+            color: white;
+            border-radius: 20px;
+        }
+        .login-btn:hover {
+            background-color: #218838;
+        }
+        .video-btn, .editor-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .video-btn:hover, .editor-btn:hover {
+            background-color: #0056b3;
+        }
+        .subscribe-btn {
+            background-color: #FF0000;
+            color: white;
+            border-radius: 20px;
+        }
+        .subscribe-btn:hover {
+            background-color: #CC0000;
+            border-radius: 20px;
+        }
+        .error {
+            color: red;
+            display: none;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter Username">
+    <input type="password" id="password" placeholder="Enter Password">
+    
+    <button class="login-btn" onclick="login('app.html')">Login (AI Image Generator V2)</button>
+<button class="subscribe-btn" onclick="subscribe()">Subscribe on YouTube</button>
+    
+    <p class="error" id="error-msg">Incorrect password! Please try again.</p>
+</div>
+
+<script>
+    function login(page) {
+        const password = document.getElementById("password").value;
+        if (password === "2010") {
+            window.location.href = page;  // ✅ Correct Password → Go to Page
+        } else {
+            document.getElementById("error-msg").style.display = "block";  // ❌ Show error message
+        }
+    }
+
+    function subscribe() {
+        window.location.href = "https://www.youtube.com/@WebMudiyanse2010?sub_confirmation=1";
+    }
+</script>
+
+</body>
+</html>
